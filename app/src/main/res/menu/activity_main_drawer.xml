@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/eng_vn"
+            android:icon="@drawable/home_icon"
+            android:title="EngLish-VietNamese" >
+
+        </item>
+        <item
+            android:id="@+id/vn_eng"
+            android:icon="@drawable/vn_icon"
+            android:title="VietNamese-English" />
+        <item
+            android:id="@+id/favourite"
+            android:icon="@drawable/favourite_icon"
+            android:title="favourites" />
+        <item
+            android:id="@+id/word"
+            android:icon="@drawable/word_icon"
+            android:title="Your Word" />
+        <item
+            android:id="@+id/share"
+            android:icon="@drawable/sh_icon"
+            android:title="Share" />
+        <item
+            android:id="@+id/help"
+            android:icon="@drawable/help_icon"
+            android:title="Help" />
+    </group>
+</menu>
