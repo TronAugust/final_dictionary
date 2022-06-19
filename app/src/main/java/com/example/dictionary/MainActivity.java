@@ -120,6 +120,21 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+        // CHANGE VN_ENG
+        vn_eng.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                if(path=="va")   Toast.makeText(getApplicationContext(),"ban da o che do viet anh",Toast.LENGTH_LONG).show();
+                else {
+                    Toast.makeText(getApplicationContext(),"ban vua chon che do viet anh",Toast.LENGTH_LONG).show();
+                    tempt="va";
+                    saveStr(context,tempt);
+                    activity.recreate();
+                }
+                return true;
+            }
+        });
     }
 
     @Override
@@ -203,6 +218,29 @@ public class MainActivity extends AppCompatActivity {
                 //Toast.makeText(getApplicationContext(),"ban vua chon che do anh viet",Toast.LENGTH_LONG).show();
 
                 Intent myIntent = new Intent(MainActivity.this, DefinitionActivity.class);
+                // Bundle bundle=new Bundle();
+                // bundle.putString("");
+                String x = anhViet.get(position);
+                myIntent.putExtra("word", x);
+                startActivity(myIntent);
+            }
+        });
+    }
+
+    private void vietanh(){
+        DatabaseAccessVIET_ANH databaseAccess = DatabaseAccessVIET_ANH.getInstance(this);
+        databaseAccess.open();
+        List<String> anhViet = databaseAccess.getWords();
+        databaseAccess.close();
+
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, anhViet);
+        this.listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //   Toast.makeText(getApplicationContext(),"ban vua chon che do anh viet",Toast.LENGTH_LONG).show();
+
+                Intent myIntent = new Intent(MainActivity.this, DefinitionActivityVIET_ANH.class);
                 // Bundle bundle=new Bundle();
                 // bundle.putString("");
                 String x = anhViet.get(position);
