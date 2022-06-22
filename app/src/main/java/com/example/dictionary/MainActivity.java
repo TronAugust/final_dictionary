@@ -24,7 +24,6 @@ import com.example.dictionary.Model.DatabaseAccessVIET_ANH;
 import com.example.dictionary.favourites.DatabaseAccessFavourite;
 import com.example.dictionary.favourites.favourite;
 import com.example.dictionary.favourites.favouriteVnEng;
-import com.example.dictionary.yourWord.yourWord;
 
 import com.example.dictionary.R;
 
@@ -52,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
     public   String  path="av";
     public static final String preference_file_key="preference_file_key";
-    MenuItem eng_vn,vn_eng,fav,word,share,help;
+    MenuItem eng_vn,vn_eng,fav,word;
     Activity activity;
 
     private AppBarConfiguration mAppBarConfiguration;
@@ -63,6 +62,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Context context=MainActivity.this;
         activity=MainActivity.this;
+
+        //  create_Db_Fav();
+        mapping();
+        actionToolBar();
+        optionENG_VN(context);
+        processIconNavigation(context);
 
         search_volume.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -132,6 +137,21 @@ public class MainActivity extends AppCompatActivity {
                     saveStr(context,tempt);
                     activity.recreate();
                 }
+                return true;
+            }
+        });
+
+        // Click Event Favourite
+        fav.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                Intent myIntent;
+                if(way=="va"){
+                    myIntent = new Intent(MainActivity.this, favouriteVnEng.class);
+                    startActivity(myIntent);}
+                if(way=="av"){
+                    myIntent = new Intent(MainActivity.this, favourite.class);
+                    startActivity(myIntent);}
                 return true;
             }
         });
