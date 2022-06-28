@@ -9,3 +9,10 @@ tên dự án: từ điển online
   + dịch từ tiếng việt qua tiếng anh
   + search theo từ khoá.
   + thêm từ vào danh sách ưa thích.
+  
+- Hướng phát triển:
+  + Chức năng tìm kiếm từ bằng giọng nói.
+  + Chức năng đọc từ.
+  + Chức năng thêm nghĩa từ mới.
+  + Lịch sử tìm kiếm.
+  
