@@ -7,5 +7,5 @@ tên dự án: từ điển online
 - Các chức năng chính:
   + dịch từ tiếng anh qua tiếng việt
   + dịch từ tiếng việt qua tiếng anh
-  + search theo từ khoá.
+  + search theo từ khoá
   + thêm từ vào danh sách ưa thích.
